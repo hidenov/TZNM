@@ -35,7 +35,7 @@ int main( int argc, char *argv[] )
 			h_dac = wiringPiI2CSetup( ID_DAC2_ADDR ) ;
 			if( h_dac > 0 )
 			{
-				dac_value = (int)strtol( argv[1], NULL, 16 ) ;
+				dac_value = (int)strtol( argv[2], NULL, 16 ) ;
 				wiringPiI2CWriteReg8( h_dac, ( dac_value >> 8 ) & 0xff, dac_value &0xff ) ;
 				h_adc = wiringPiI2CSetup( ID_ADC_ADDR ) ;
 				if( h_adc > 0 )
